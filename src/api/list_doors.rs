@@ -21,8 +21,10 @@ async fn handle_list_doors(
     Ok(warp::reply::json(&doors))
 }
 
-pub fn list_doors(store: Store) -> impl Filter<Extract = impl warp::Reply> + Clone {
-    warp::path!("list-doors")
+pub fn list_doors(
+    store: Store,
+) -> impl Filter<Extract = (impl warp::Reply,), Error = warp::Rejection> + Clone {
+    warp::path!("api" / "list-doors")
         .and(warp::post())
         .and(warp::body::json::<ListDoorsOptions>())
         .and(with_store(store))
