@@ -18,5 +18,5 @@ async fn main() {
         .or(get_puzzle(store.clone()))
         .or(guess_answer(store.clone()));
 
-    warp::serve(api).run(([127, 0, 0, 1], 3000)).await;
+    warp::serve(api).run(([0, 0, 0, 0], 3000)).await;
 }
