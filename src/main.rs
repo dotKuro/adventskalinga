@@ -1,4 +1,4 @@
-use advent_calendar_backend::api::{get_puzzle, guess_answer, list_doors};
+use advent_calendar_backend::api::{backup, get_puzzle, guess_answer, list_doors};
 use advent_calendar_backend::store::Store;
 use std::env;
 use warp::Filter;
@@ -16,7 +16,8 @@ async fn main() {
 
     let api = list_doors(store.clone())
         .or(get_puzzle(store.clone()))
-        .or(guess_answer(store.clone()));
+        .or(guess_answer(store.clone()))
+        .or(backup(store.clone()));
 
     warp::serve(api).run(([0, 0, 0, 0], 3000)).await;
 }

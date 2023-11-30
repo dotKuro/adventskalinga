@@ -1,5 +1,6 @@
 use crate::domain::{generate_doors_for_new_session, Door};
 use std::collections::HashMap;
+use std::fs;
 use std::sync::{Arc, Mutex};
 
 #[derive(Clone)]
@@ -9,8 +10,14 @@ pub struct Store {
 
 impl Store {
     pub fn new() -> Self {
+        let store_data = fs::read_to_string("data/store.json");
+        let hash_map: HashMap<String, Vec<Door>> = match store_data {
+            Ok(data) => serde_json::from_str(&data).unwrap(),
+            Err(_) => HashMap::new(),
+        };
+
         Self {
-            hash_map_mutex: Arc::new(Mutex::new(HashMap::new())),
+            hash_map_mutex: Arc::new(Mutex::new(hash_map)),
         }
     }
 
@@ -49,6 +56,7 @@ impl Store {
             })
             .collect();
         hash_map.insert(session_id, new_doors);
+        self.backup();
     }
 
     pub fn is_door_open(&self, session_id: String, number: u8) -> bool {
@@ -66,5 +74,11 @@ impl Store {
             }
             None => false,
         }
+    }
+
+    pub fn backup(&self) {
+        let hash_map = self.hash_map_mutex.lock().unwrap();
+        let serialized_data = serde_json::to_string(&(*hash_map)).unwrap();
+        fs::write("data/store.json", serialized_data).unwrap();
     }
 }

@@ -2,7 +2,7 @@ use chrono::{DateTime, Local};
 use rand::seq::SliceRandom;
 use serde::{Deserialize, Serialize};
 
-#[derive(Clone, Serialize, Debug)]
+#[derive(Clone, Serialize, Debug, Deserialize)]
 pub struct Door {
     pub number: u8,
     pub open: bool,
