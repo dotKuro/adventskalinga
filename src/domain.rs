@@ -23,7 +23,7 @@ pub fn generate_doors_for_new_session() -> Vec<Door> {
 }
 
 fn get_date_for_number(number: u8) -> DateTime<Local> {
-    let date_string = format!("2023-12-{:0>2}T00:00:00-00:00", number);
+    let date_string = format!("2023-12-{:0>2}T00:00:00+01:00", number);
     DateTime::parse_from_rfc3339(&date_string).unwrap().into()
 }
 
