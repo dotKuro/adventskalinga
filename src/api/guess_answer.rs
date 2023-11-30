@@ -1,3 +1,4 @@
+use crate::domain::is_door_allowed_to_be_open;
 use crate::domain::{Color, PuzzleControl};
 use crate::store::Store;
 use crate::utils::with_store;
@@ -38,13 +39,13 @@ async fn handle_get_puzzle(
         }));
     }
 
-    // if is_door_allowed_to_be_open(number) {
-    //     return Ok(warp::reply::json(&GuessAnswerResponse::Error {
-    //         error: String::from(
-    //             "Dieses Türchen bleibt noch geschlossen. Sei nicht so neugierig. OwO",
-    //         ),
-    //     }));
-    // };
+    if is_door_allowed_to_be_open(options.number) {
+        return Ok(warp::reply::json(&GuessAnswerResponse::Error {
+            error: String::from(
+                "Dieses Türchen bleibt noch geschlossen. Sei nicht so neugierig. OwO",
+            ),
+        }));
+    };
 
     if !store.is_door_open(options.session_id, options.number) {
         return Ok(warp::reply::json(&GuessAnswerResponse::Error {
