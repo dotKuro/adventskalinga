@@ -56,7 +56,6 @@ impl Store {
             })
             .collect();
         hash_map.insert(session_id, new_doors);
-        self.backup();
     }
 
     pub fn is_door_open(&self, session_id: String, number: u8) -> bool {
