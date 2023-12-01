@@ -55,25 +55,35 @@ async fn handle_get_puzzle(
         }));
     }
 
-    let answer = match options.number {
-        1 => vec![
-            PuzzleControl::ColorPicker(Some(Color::Green)),
-            PuzzleControl::ColorPicker(Some(Color::Orange)),
-            PuzzleControl::ColorPicker(Some(Color::Blue)),
-            PuzzleControl::ColorPicker(Some(Color::Red)),
-            PuzzleControl::ColorPicker(Some(Color::Green)),
-            PuzzleControl::ColorPicker(Some(Color::Orange)),
-            PuzzleControl::ColorPicker(Some(Color::Blue)),
-            PuzzleControl::ColorPicker(Some(Color::Red)),
-            PuzzleControl::ColorPicker(Some(Color::Green)),
-        ],
+    let (answer, code) = match options.number {
+        1 => (
+            vec![
+                PuzzleControl::ColorPicker(Some(Color::Green)),
+                PuzzleControl::ColorPicker(Some(Color::Orange)),
+                PuzzleControl::ColorPicker(Some(Color::Blue)),
+                PuzzleControl::ColorPicker(Some(Color::Red)),
+                PuzzleControl::ColorPicker(Some(Color::Green)),
+                PuzzleControl::ColorPicker(Some(Color::Orange)),
+                PuzzleControl::ColorPicker(Some(Color::Blue)),
+                PuzzleControl::ColorPicker(Some(Color::Red)),
+                PuzzleControl::ColorPicker(Some(Color::Green)),
+            ],
+            "3726",
+        ),
+        2 => (
+            vec![
+                PuzzleControl::NumberPicker(101),
+                PuzzleControl::NumberPicker(7),
+            ],
+            "0608",
+        ),
         _ => panic!("unreachable"),
     };
 
     let response = {
         if answer == options.answer {
             GuessAnswerResponse::Correct {
-                code: String::from("3726"),
+                code: String::from(code),
             }
         } else {
             GuessAnswerResponse::Wrong

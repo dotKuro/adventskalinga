@@ -49,7 +49,7 @@ pub enum PuzzleDescription {
 #[serde(tag = "type", content = "value")]
 pub enum PuzzleControl {
     ColorPicker(Option<Color>),
-    NumberPicker,
+    NumberPicker(i32),
 }
 
 #[derive(Deserialize, Serialize, PartialEq, Debug)]

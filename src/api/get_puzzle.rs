@@ -64,10 +64,11 @@ async fn handle_get_puzzle(
             ],
         },
         2 => Puzzle {
-            description: PuzzleDescription::Text(String::from(
-                "Wie viele Tassen haben wir zu Hause?",
-            )),
-            controls: vec![PuzzleControl::NumberPicker],
+            description: PuzzleDescription::Image(String::from("/assests/images/puzzle_2.png")),
+            controls: vec![
+                PuzzleControl::NumberPicker(0),
+                PuzzleControl::NumberPicker(0),
+            ],
         },
         _ => panic!("unreachable"),
     };
