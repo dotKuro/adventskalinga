@@ -70,6 +70,13 @@ async fn handle_get_puzzle(
                 PuzzleControl::NumberPicker(0),
             ],
         },
+        3 => Puzzle {
+            description: PuzzleDescription::Text(String::from("🎛🥩️➡️🌡️️️🕒⬅️")),
+            controls: vec![
+                PuzzleControl::NumberPicker(0),
+                PuzzleControl::NumberPicker(0),
+            ],
+        },
         _ => panic!("unreachable"),
     };
 
