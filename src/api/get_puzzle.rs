@@ -1,6 +1,6 @@
 use crate::domain::{is_door_allowed_to_be_open, Puzzle, PuzzleControl, PuzzleDescription};
 use crate::store::Store;
-use crate::utils::with_store;
+use crate::utils::{tv_shows, with_store};
 use serde::{Deserialize, Serialize};
 use std::convert::Infallible;
 use warp::Filter;
@@ -76,6 +76,14 @@ async fn handle_get_puzzle(
                 PuzzleControl::NumberPicker(0),
                 PuzzleControl::NumberPicker(0),
             ],
+        },
+        4 => Puzzle {
+            description: PuzzleDescription::Text(String::from("👺❌🦨💨👃✅")),
+            controls: vec![PuzzleControl::TextSelection(String::from(""), tv_shows())],
+        },
+        22 => Puzzle {
+            description: PuzzleDescription::Text(String::from("heute")),
+            controls: vec![PuzzleControl::TextInput(String::new())],
         },
         _ => panic!("unreachable"),
     };

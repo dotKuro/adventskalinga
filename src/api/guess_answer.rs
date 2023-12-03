@@ -1,7 +1,7 @@
 use crate::domain::is_door_allowed_to_be_open;
 use crate::domain::{Color, PuzzleControl};
 use crate::store::Store;
-use crate::utils::with_store;
+use crate::utils::{tv_shows, with_store};
 use serde::{Deserialize, Serialize};
 use std::convert::Infallible;
 use warp::Filter;
@@ -83,6 +83,13 @@ async fn handle_get_puzzle(
                 PuzzleControl::NumberPicker(6),
             ],
             "8941",
+        ),
+        4 => (
+            vec![PuzzleControl::TextSelection(
+                String::from("Spongebob Squarepants"),
+                tv_shows(),
+            )],
+            "7203",
         ),
         _ => panic!("unreachable"),
     };

@@ -50,6 +50,8 @@ pub enum PuzzleDescription {
 pub enum PuzzleControl {
     ColorPicker(Option<Color>),
     NumberPicker(i32),
+    TextInput(String),
+    TextSelection(String, Vec<String>),
 }
 
 #[derive(Deserialize, Serialize, PartialEq, Debug)]
