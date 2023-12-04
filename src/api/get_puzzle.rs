@@ -81,6 +81,10 @@ async fn handle_get_puzzle(
             description: PuzzleDescription::Text(String::from("👺❌🦨💨👃✅")),
             controls: vec![PuzzleControl::TextSelection(String::from(""), tv_shows())],
         },
+        5 => Puzzle {
+            description: PuzzleDescription::Text(String::from("5 12 24 36 ?")),
+            controls: vec![PuzzleControl::NumberPicker(0)],
+        },
         22 => Puzzle {
             description: PuzzleDescription::Text(String::from("heute")),
             controls: vec![PuzzleControl::TextInput(String::new())],

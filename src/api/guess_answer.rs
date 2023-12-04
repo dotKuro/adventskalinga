@@ -91,6 +91,7 @@ async fn handle_get_puzzle(
             )],
             "7203",
         ),
+        5 => (vec![PuzzleControl::NumberPicker(52)], "5274"),
         _ => panic!("unreachable"),
     };
 
