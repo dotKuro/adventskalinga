@@ -52,6 +52,7 @@ pub enum PuzzleControl {
     NumberPicker(i32),
     TextInput(String),
     TextSelection(String, Vec<String>),
+    InvisibleText(String),
 }
 
 #[derive(Deserialize, Serialize, PartialEq, Debug)]

@@ -3,6 +3,7 @@ use crate::store::Store;
 use crate::utils::{tv_shows, with_store};
 use serde::{Deserialize, Serialize};
 use std::convert::Infallible;
+use std::vec;
 use warp::Filter;
 
 #[derive(Deserialize)]
@@ -84,6 +85,13 @@ async fn handle_get_puzzle(
         5 => Puzzle {
             description: PuzzleDescription::Text(String::from("5 12 24 36 ?")),
             controls: vec![PuzzleControl::NumberPicker(0)],
+        },
+        6 => Puzzle {
+            description: PuzzleDescription::Text(String::from("Inspect me! 👀")),
+            controls: vec![
+                PuzzleControl::InvisibleText(String::from("You did well meow")),
+                PuzzleControl::TextInput(String::new()),
+            ],
         },
         22 => Puzzle {
             description: PuzzleDescription::Text(String::from("heute")),

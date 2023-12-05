@@ -92,6 +92,13 @@ async fn handle_get_puzzle(
             "7203",
         ),
         5 => (vec![PuzzleControl::NumberPicker(52)], "5274"),
+        6 => (
+            vec![
+                PuzzleControl::InvisibleText(String::from("You did well meow")),
+                PuzzleControl::TextInput(String::from("You did well meow")),
+            ],
+            "4348",
+        ),
         _ => panic!("unreachable"),
     };
 
