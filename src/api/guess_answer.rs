@@ -99,6 +99,13 @@ async fn handle_get_puzzle(
             ],
             "4348",
         ),
+        7 => (
+            vec![PuzzleControl::TextSelection(
+                String::from("One Piece"),
+                tv_shows(),
+            )],
+            "7334",
+        ),
         _ => panic!("unreachable"),
     };
 
