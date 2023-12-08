@@ -111,7 +111,7 @@ async fn handle_get_puzzle(
                 PuzzleControl::NumberPicker(8),
                 PuzzleControl::NumberPicker(15),
                 PuzzleControl::NumberPicker(25),
-                PuzzleControl::NumberPicker(23),
+                PuzzleControl::NumberPicker(25),
             ],
             "2316",
         ),
