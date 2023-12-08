@@ -98,7 +98,7 @@ async fn handle_get_puzzle(
             controls: vec![PuzzleControl::TextSelection(String::new(), tv_shows())],
         },
         8 => Puzzle {
-            description: PuzzleDescription::Image(String::from("/assests/images/puzzle_8")),
+            description: PuzzleDescription::Image(String::from("/assests/images/puzzle_8.png")),
             controls: vec![
                 PuzzleControl::NumberPicker(0),
                 PuzzleControl::NumberPicker(0),
