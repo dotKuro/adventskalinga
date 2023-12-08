@@ -106,6 +106,10 @@ async fn handle_get_puzzle(
                 PuzzleControl::NumberPicker(0),
             ],
         },
+        9 => Puzzle {
+            description: PuzzleDescription::Text(String::from("1 0 1 -1 2 -3 ?")),
+            controls: vec![PuzzleControl::NumberPicker(0)],
+        },
         22 => Puzzle {
             description: PuzzleDescription::Text(String::from("heute")),
             controls: vec![PuzzleControl::TextInput(String::new())],
