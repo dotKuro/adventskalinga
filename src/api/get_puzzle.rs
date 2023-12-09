@@ -110,6 +110,10 @@ async fn handle_get_puzzle(
             description: PuzzleDescription::Text(String::from("1 0 1 -1 2 -3 ?")),
             controls: vec![PuzzleControl::NumberPicker(0)],
         },
+        10 => Puzzle {
+            description: PuzzleDescription::Text(String::from("🛼⭐️➡️🛼➖")),
+            controls: vec![PuzzleControl::TextInput(String::new())],
+        },
         22 => Puzzle {
             description: PuzzleDescription::Text(String::from("heute")),
             controls: vec![PuzzleControl::TextInput(String::new())],
