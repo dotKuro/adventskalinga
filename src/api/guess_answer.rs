@@ -124,6 +124,13 @@ async fn handle_get_puzzle(
             vec![PuzzleControl::TextInput(String::from("Rainbow Road"))],
             "2446",
         ),
+        12 => (
+            vec![PuzzleControl::TextSelection(
+                String::from("Gray's Anatomy"),
+                tv_shows(),
+            )],
+            "9218",
+        ),
         _ => panic!("unreachable"),
     };
 

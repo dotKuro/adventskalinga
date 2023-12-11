@@ -49,7 +49,7 @@ pub fn tv_shows() -> Vec<String> {
         String::from("Desprate Housewives"),
         String::from("Planet Earth"),
         String::from("Pokemon"),
-        String::from("Zoey 11"),
+        String::from("Zoey 101"),
         String::from("iCarly"),
         String::from("The Witcher"),
         String::from("Monk"),
