@@ -126,6 +126,10 @@ async fn handle_get_puzzle(
             description: PuzzleDescription::Text(String::from("/assests/images/puzzle_13.png")),
             controls: vec![PuzzleControl::TextInput(String::new())],
         },
+        14 => Puzzle {
+            description: PuzzleDescription::Image(String::from("/assests/images/puzzle_14.png")),
+            controls: vec![PuzzleControl::NumberPicker(0)],
+        },
         22 => Puzzle {
             description: PuzzleDescription::Text(String::from("heute")),
             controls: vec![PuzzleControl::TextInput(String::new())],
