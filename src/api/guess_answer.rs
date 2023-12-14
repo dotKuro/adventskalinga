@@ -145,6 +145,12 @@ async fn handle_get_puzzle(
             )],
             "2041",
         ),
+        16 => (
+            vec![PuzzleControl::TextInput(String::from(
+                "You did well meeeow!",
+            ))],
+            "8725",
+        ),
         _ => panic!("unreachable"),
     };
 
