@@ -138,6 +138,13 @@ async fn handle_get_puzzle(
             "8627",
         ),
         14 => (vec![PuzzleControl::NumberPicker(15)], "9132"),
+        15 => (
+            vec![PuzzleControl::TextSelection(
+                String::from("Gilmore Girls"),
+                tv_shows(),
+            )],
+            "2041",
+        ),
         _ => panic!("unreachable"),
     };
 
