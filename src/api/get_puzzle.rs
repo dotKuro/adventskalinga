@@ -142,6 +142,10 @@ async fn handle_get_puzzle(
             description: PuzzleDescription::Text(String::from("M D M D ?")),
             controls: vec![PuzzleControl::TextInput(String::new())],
         },
+        18 => Puzzle {
+            description: PuzzleDescription::Text(String::from("nothing to see here")),
+            controls: vec![PuzzleControl::TextInput(String::from(""))],
+        },
         22 => Puzzle {
             description: PuzzleDescription::Text(String::from("heute")),
             controls: vec![PuzzleControl::TextInput(String::new())],
