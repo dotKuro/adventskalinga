@@ -161,6 +161,13 @@ async fn handle_get_puzzle(
             vec![PuzzleControl::TextInput(String::from("Pikachu"))],
             "6209",
         ),
+        21 => (
+            vec![PuzzleControl::TextSelection(
+                String::from("How I met your Mother"),
+                tv_shows(),
+            )],
+            "6886",
+        ),
         _ => panic!("unreachable"),
     };
 
