@@ -157,6 +157,10 @@ async fn handle_get_puzzle(
             "7280",
         ),
         19 => (vec![PuzzleControl::NumberPicker(18)], "9306"),
+        20 => (
+            vec![PuzzleControl::TextInput(String::from("Pikachu"))],
+            "6209",
+        ),
         _ => panic!("unreachable"),
     };
 
