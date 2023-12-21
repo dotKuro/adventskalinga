@@ -168,6 +168,10 @@ async fn handle_get_puzzle(
             )],
             "6886",
         ),
+        22 => (
+            vec![PuzzleControl::TextInput(String::from("Wintersonnenwende"))],
+            "3478",
+        ),
         _ => panic!("unreachable"),
     };
 
