@@ -162,6 +162,13 @@ async fn handle_get_puzzle(
             description: PuzzleDescription::Text(String::from("heute")),
             controls: vec![PuzzleControl::TextInput(String::new())],
         },
+        23 => Puzzle {
+            description: PuzzleDescription::Image(String::from("/assests/images/puzzle_23.png")),
+            controls: vec![
+                PuzzleControl::TextInput(String::new()),
+                PuzzleControl::TextInput(String::new()),
+            ],
+        },
         _ => panic!("unreachable"),
     };
 
