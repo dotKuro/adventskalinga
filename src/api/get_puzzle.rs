@@ -169,6 +169,12 @@ async fn handle_get_puzzle(
                 PuzzleControl::TextInput(String::new()),
             ],
         },
+        24 => Puzzle {
+            description: PuzzleDescription::Text(String::from(
+                "SWNoIGhvZmZlIGRpciBoYXQgZGVyIEthbGVuZGFyIGdlZmFsbGVuIDwzCg==",
+            )),
+            controls: vec![PuzzleControl::TextInput(String::new())],
+        },
         _ => panic!("unreachable"),
     };
 

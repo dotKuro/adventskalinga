@@ -179,7 +179,12 @@ async fn handle_get_puzzle(
             ],
             "0101",
         ),
-        24 => (vec![], "0000"),
+        24 => (
+            vec![PuzzleControl::TextInput(String::from(
+                "Ich hoffe dir hat der Kalendar gefallen <3",
+            ))],
+            "4838",
+        ),
         _ => panic!("unreachable"),
     };
 
